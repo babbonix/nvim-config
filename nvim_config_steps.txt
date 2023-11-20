@@ -1,0 +1,38 @@
+Install build prerequisites, ripgrep and git:
+sudo apt-get install ninja-build gettext cmake unzip curl ripgrep git
+
+clone from github
+git clone https://github.com/neovim/neovim
+
+build and install
+cd neovim && make CMAKE_BUILD_TYPE=RelWithDebInfo
+sudo make install
+
+(test with nvim --version)
+
+
+================
+-----CONFIG-----
+================
+
+
+clone packer.nvim:
+git clone --depth 1 https://github.com/wbthomason/packer.nvim\
+ ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+
+clone babbonix/nvim-config
+git clone https://github.com/babbonix/nvim-config.git ~/nvim-config
+
+copy the nvim folder to the configuration:
+cp ~/nvim-config/nvim ~/.config/nvim
+
+open up nvim in the ~/.config/nvim folder, quit the errors, 
+navigate to ~/.config/nvim/lua/matt/packer.lua and launch :so and then :PackerSync
+
+wait for plugins to install, reopen nvim and wait for treesitter to download languages
+
+
+================
+------DONE------
+================
+
